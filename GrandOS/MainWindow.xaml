@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:GrandOS"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Viewbox StretchDirection="UpOnly" Stretch="UniformToFill">
+        <Grid Background="#FF111A29" Height="450" Width="800">
+            <Label x:Name="clockLabel" Content="20:30" HorizontalAlignment="Left" Foreground="White" FontSize="72" HorizontalContentAlignment="Center" Width="188" Margin="10,10,0,336"/>
+        </Grid>
+    </Viewbox>
 
-    </Grid>
 </Window>
