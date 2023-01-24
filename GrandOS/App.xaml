@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:GrandOS"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+
+        <FontFamily x:Key="settingFontFamilyTitle">Segoe UI</FontFamily>
+        <FontFamily x:Key="settingFontFamilyContent">Global Sans Serif</FontFamily>
     </Application.Resources>
 </Application>

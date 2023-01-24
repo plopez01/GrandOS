@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GrandOS"
         mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStyle="None"
         Title="MainWindow" Height="450" Width="800">
     <Viewbox StretchDirection="UpOnly" Stretch="UniformToFill">
         <Grid Background="#FF111A29" Height="450" Width="800">
-            <Label x:Name="clockLabel" Content="20:30" HorizontalAlignment="Left" Foreground="White" FontSize="72" HorizontalContentAlignment="Center" Width="188" Margin="10,10,0,336"/>
+            <Label FontFamily="{DynamicResource settingFontFamilyTitle}" x:Name="clockLabel" Content="20:30" HorizontalAlignment="Left" Foreground="White" FontSize="72" HorizontalContentAlignment="Center" Width="188" Margin="10,10,0,347"/>
+            <Label x:Name="dateLabel" FontFamily="{DynamicResource settingFontFamilyContent}" Content="Divendres 24 de gener de 2023" Foreground="#99FFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0" Width="295" FontSize="20" Height="34"/>
+            <Grid x:Name="appGird" Margin="10,142,10,10"/>
         </Grid>
     </Viewbox>
 

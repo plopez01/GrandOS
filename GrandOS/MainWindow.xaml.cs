@@ -23,11 +23,33 @@ namespace GrandOS
     {
         public MainWindow()
         {
+            //Application.Current.Resources["settingFontFamilyContent"] = new FontFamily("Segoe UI");
+
             InitializeComponent();
 
-            WindowState = WindowState.Maximized;
-            WindowStyle = WindowStyle.None;
-            _ = new Clock(clockLabel, "HH:mm");
+            _ = new Clock(clockLabel, "HH:mm", dateLabel, "D");
+
+            var rect = new Rectangle()
+            {
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Width = 50,
+                Height = 50,
+                Fill = Brushes.AliceBlue
+            };
+            appGird.Children.Add(rect);
+            var rect2 = new Rectangle()
+            {
+                Margin = new Thickness(60, 0, 0, 0),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Width = 50,
+                Height = 50,
+                Fill = Brushes.AliceBlue
+            };
+
+            
+            appGird.Children.Add(rect2);
         }
     }
 }

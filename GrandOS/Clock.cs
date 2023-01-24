@@ -9,14 +9,19 @@ namespace GrandOS
     class Clock
     {
         DispatcherTimer timer = new DispatcherTimer();
-        Label label;
-        string format;
-        public Clock(Label label, string format)
-        {
-            this.label = label;
-            this.format = format;
+        Label timeLabel, dateLabel;
+        string timeFormat, dateFormat;
 
-            label.Content = DateTime.Now.ToString(format);
+        public Clock(Label timeLabel, string timeFormat, Label dateLabel, string dateFormat)
+        {
+            this.timeLabel = timeLabel;
+            this.timeFormat = timeFormat;
+
+            this.dateLabel = dateLabel;
+            this.dateFormat = dateFormat;
+
+            timeLabel.Content = DateTime.Now.ToString(timeFormat);
+            dateLabel.Content = DateTime.Today.ToString(dateFormat);
 
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += tick;
@@ -25,7 +30,8 @@ namespace GrandOS
 
         void tick(object sender, EventArgs e)
         {
-            label.Content = DateTime.Now.ToString(format);
+            timeLabel.Content = DateTime.Now.ToString(timeFormat);
+            dateLabel.Content = DateTime.Today.ToString(dateFormat);
         }
 
     }
