@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrandOS", "GrandOS\GrandOS.csproj", "{509CE2A1-C513-4E44-AB54-F24BEF8BE598}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{509CE2A1-C513-4E44-AB54-F24BEF8BE598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509CE2A1-C513-4E44-AB54-F24BEF8BE598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509CE2A1-C513-4E44-AB54-F24BEF8BE598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509CE2A1-C513-4E44-AB54-F24BEF8BE598}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E7CF4A6-E98D-46AD-BE3F-6C4422659A4C}
+	EndGlobalSection
+EndGlobal
