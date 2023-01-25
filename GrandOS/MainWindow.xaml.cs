@@ -17,6 +17,7 @@ using GrandOS.UI.Elements;
 using GrandOS.UI;
 using GrandOS.Programs;
 using System.Globalization;
+using GrandOS.Windows;
 
 namespace GrandOS
 {
@@ -25,6 +26,8 @@ namespace GrandOS
     /// </summary>
     public partial class MainWindow : Window
     {
+        AlwaysOnTop alwaysOnTop;
+
         public MainWindow()
         {
             //Application.Current.Resources["settingFontFamilyContent"] = new FontFamily("Segoe UI");
@@ -37,6 +40,27 @@ namespace GrandOS
             List<Program> programs = new List<Program>(){ new LinkerProgram("https://mail.google.com/"), new ExecutableProgam("calc.exe") };
 
             _ = new ProgramGrid(appGird, 5, 2, 5, 5, programs);
+
+            alwaysOnTop = new AlwaysOnTop();
+            alwaysOnTop.SetUpPos();
+            alwaysOnTop.Show();
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            alwaysOnTop.SetUpPos();
+        }
+
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            alwaysOnTop.SetDownPos();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            Application.Current.Shutdown();
         }
     }
 }

@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         WindowStyle="None"
+		Activated="Window_Activated"
+		Deactivated="Window_Deactivated"
         Title="MainWindow" Height="450" Width="800">
     <Viewbox StretchDirection="UpOnly" Stretch="UniformToFill">
         <Grid Background="#FF111A29" Height="450" Width="800">
