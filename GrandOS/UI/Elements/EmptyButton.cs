@@ -1,0 +1,37 @@
+﻿using GrandOS.UI.Base;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Shapes;
+
+namespace GrandOS.UI.Elements
+{
+    internal class EmptyButton : GirdButton
+    {
+        internal EmptyButton(Grid grid, int x, int y, Thickness margin)
+        {
+            background = new Rectangle()
+            {
+                Margin = margin,
+                Fill = Brushes.DimGray,
+                IsHitTestVisible = false
+            };
+
+            content = new Label()
+            {
+                Foreground = Brushes.White,
+                Content = "+",
+                FontFamily = (FontFamily)Application.Current.Resources["settingFontFamilyContent"],
+                FontSize = 20,
+                FontWeight = FontWeights.Bold,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+
+            AddToGrid(grid, x, y);
+        }
+    }
+}

@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
-namespace GrandOS
+namespace GrandOS.UI.Elements
 {
     class Clock
     {
@@ -12,7 +12,7 @@ namespace GrandOS
         Label timeLabel, dateLabel;
         string timeFormat, dateFormat;
 
-        public Clock(Label timeLabel, string timeFormat, Label dateLabel, string dateFormat)
+        internal Clock(Label timeLabel, string timeFormat, Label dateLabel, string dateFormat)
         {
             this.timeLabel = timeLabel;
             this.timeFormat = timeFormat;

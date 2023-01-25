@@ -13,7 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-
+using GrandOS.UI.Elements;
+using GrandOS.UI;
 namespace GrandOS
 {
     /// <summary>
@@ -30,7 +31,7 @@ namespace GrandOS
             _ = new Clock(clockLabel, "HH:mm", dateLabel, "D");
 
 
-            List<Program> programs = new List<Program>(){ new Program("Correu", Brushes.BlueViolet) };
+            List<Program> programs = new List<Program>(){ new Program("Correu", Brushes.BlueViolet), new Program("Fotos", Brushes.Orange) };
 
             _ = new ProgramGrid(appGird, 5, 2, 5, 5, programs);
         }

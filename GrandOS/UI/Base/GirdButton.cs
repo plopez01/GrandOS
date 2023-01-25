@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Shapes;
+
+namespace GrandOS.UI.Base
+{
+    abstract class GirdButton
+    {
+        protected Rectangle background;
+        protected Label content;
+
+        protected void AddToGrid(Grid grid, int x, int y)
+        {
+            Grid.SetColumn(background, x);
+            Grid.SetRow(background, y);
+
+            Grid.SetColumn(content, x);
+            Grid.SetRow(content, y);
+
+            grid.Children.Add(background);
+            grid.Children.Add(content);
+        }
+    }
+}

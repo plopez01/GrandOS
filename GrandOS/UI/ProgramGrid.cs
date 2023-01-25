@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrandOS.UI.Elements;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -6,14 +7,14 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace GrandOS
+namespace GrandOS.UI
 {
     class ProgramGrid
     {
         int rows, cols, horizontalMargin, verticalMargin;
         List<Program> programs;
         Grid grid;
-        public ProgramGrid(Grid grid, int cols, int rows, int horizontalMargin, int verticalMargin, List<Program> programs)
+        internal ProgramGrid(Grid grid, int cols, int rows, int horizontalMargin, int verticalMargin, List<Program> programs)
         {
             this.grid = grid;
             this.programs = programs;
@@ -37,9 +38,9 @@ namespace GrandOS
 
         private void RenderPrograms()
         {
-            if (programs.Count > rows * cols) 
+            if (programs.Count > rows * cols)
                 throw new ArgumentOutOfRangeException($"Too many programs, this gird can only take {cols * rows} programs, and you are trying to allocate {programs.Count}");
-            
+
             // Fill gird with elements
             for (int i = 0; i < rows; i++)
             {
@@ -52,43 +53,20 @@ namespace GrandOS
                     int trueHorizontalMargin = horizontalMargin;
                     if (j == 0) trueHorizontalMargin = 0;
 
-                    Button button;
+                    Thickness margin = new Thickness(trueHorizontalMargin, trueVerticalMargin, 0, 0);
 
                     // If cell has a program assigned fullfill it
-                    if ((i * rows) + j < programs.Count)
+                    if (i * rows + j < programs.Count)
                     {
-                        Program program = programs[(i * rows) + j];
-
-                        button = new Button()
-                        {
-                            Margin = new Thickness(trueHorizontalMargin, trueVerticalMargin, 0, 0),
-                            Background = program.color,
-                            Foreground = Brushes.White,
-                            Content = program.name,
-                            FontFamily = (FontFamily)Application.Current.Resources["settingFontFamilyContent"],
-                            FontSize = 20,
-                            FontWeight = FontWeights.Bold,
-                        };
-
-                       
-                    } else
+                        Program program = programs[i * rows + j];
+                        
+                        _ = new ProgramButton(program, grid, j, i, margin);
+                    }
+                    else
                     {
                         // If it's an empty cell then create an empty button
-                        button = new Button()
-                        {
-                            Margin = new Thickness(trueHorizontalMargin, trueVerticalMargin, 0, 0),
-                            Background = Brushes.DimGray,
-                            BorderBrush = Brushes.DarkGray,
-                            IsHitTestVisible = false
-                           
-                        };
+                        _ = new EmptyButton(grid, j, i, margin);
                     }
-
-
-                    // Add element to gird
-                    Grid.SetColumn(button, j);
-                    Grid.SetRow(button, i);
-                    grid.Children.Add(button);
                 }
             }
         }
