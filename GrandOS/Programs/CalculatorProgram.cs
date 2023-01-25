@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using System.Threading;
-using System.Windows;
 using System.Windows.Media;
 
 namespace GrandOS.Programs
 {
-    internal class MailProgram : Program
+    internal class CalculatorProgram : Program
     {
-        internal MailProgram() : base(Resources.MailProgram, Brushes.BlueViolet) { }
+        internal CalculatorProgram() : base(Resources.CalculatorProgram, Brushes.Orange) { }
 
         internal override void Execute()
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "http://www.gmail.com",
+                FileName = "powershell.exe",
+                Arguments = "Start-Process calc -WindowStyle ([System.Diagnostics.ProcessWindowStyle]::Maximized)",
                 UseShellExecute = true
             });
         }

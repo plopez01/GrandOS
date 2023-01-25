@@ -61,6 +61,15 @@ namespace GrandOS {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Calculator.
+        /// </summary>
+        public static string CalculatorProgram {
+            get {
+                return ResourceManager.GetString("CalculatorProgram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Mail.
         /// </summary>
         public static string MailProgram {
