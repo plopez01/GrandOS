@@ -29,7 +29,10 @@ namespace GrandOS
 
             _ = new Clock(clockLabel, "HH:mm", dateLabel, "D");
 
-            _ = new ProgramGrid(appGird, 60, 10, 10);
+
+            List<Program> programs = new List<Program>(){ new Program("Correu", Brushes.BlueViolet) };
+
+            _ = new ProgramGrid(appGird, 5, 2, 5, 5, programs);
         }
     }
 }

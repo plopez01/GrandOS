@@ -12,7 +12,9 @@
         <Grid Background="#FF111A29" Height="450" Width="800">
             <Label FontFamily="{DynamicResource settingFontFamilyTitle}" x:Name="clockLabel" Content="20:30" HorizontalAlignment="Left" Foreground="White" FontSize="72" HorizontalContentAlignment="Center" Width="188" Margin="10,10,0,347"/>
             <Label x:Name="dateLabel" FontFamily="{DynamicResource settingFontFamilyContent}" Content="Divendres 24 de gener de 2023" Foreground="#99FFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0" Width="295" FontSize="20" Height="34"/>
-            <Grid x:Name="appGird" Margin="10,142,10,10"/>
+            <Grid x:Name="appGird" Margin="10,142,10,10" HorizontalAlignment="Stretch" ShowGridLines="False">
+                
+            </Grid>
         </Grid>
     </Viewbox>
 
