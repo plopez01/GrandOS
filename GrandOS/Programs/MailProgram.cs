@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Windows;
@@ -13,8 +14,11 @@ namespace GrandOS.Programs
 
         internal override void Execute()
         {
-            Console.WriteLine(Thread.CurrentThread.CurrentCulture);
-            //Application.Current.Shutdown();
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "http://www.gmail.com",
+                UseShellExecute = true
+            });
         }
     }
 }
