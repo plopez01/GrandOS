@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using GrandOS.UI.Elements;
 using GrandOS.UI;
+using GrandOS.Programs;
+
 namespace GrandOS
 {
     /// <summary>
@@ -25,13 +27,13 @@ namespace GrandOS
         public MainWindow()
         {
             //Application.Current.Resources["settingFontFamilyContent"] = new FontFamily("Segoe UI");
-
+            // new Program("Correu", Brushes.BlueViolet), new Program("Fotoeeds", Brushes.Orange)
             InitializeComponent();
 
             _ = new Clock(clockLabel, "HH:mm", dateLabel, "D");
 
 
-            List<Program> programs = new List<Program>(){ new Program("Correu", Brushes.BlueViolet), new Program("Fotos", Brushes.Orange) };
+            List<Program> programs = new List<Program>(){ new MailProgram() };
 
             _ = new ProgramGrid(appGird, 5, 2, 5, 5, programs);
         }

@@ -9,6 +9,7 @@ using System.Windows.Shapes;
 
 namespace GrandOS.UI.Elements
 {
+    // This could be a program instead of it's own separate class
     internal class EmptyButton : GirdButton
     {
         internal EmptyButton(Grid grid, int x, int y, Thickness margin)
@@ -22,9 +23,10 @@ namespace GrandOS.UI.Elements
 
             content = new Label()
             {
+                IsHitTestVisible = false,
                 Foreground = Brushes.White,
                 Content = "+",
-                FontFamily = (FontFamily)Application.Current.Resources["settingFontFamilyContent"],
+                FontFamily = (FontFamily) Application.Current.Resources["settingFontFamilyContent"],
                 FontSize = 20,
                 FontWeight = FontWeights.Bold,
                 HorizontalAlignment = HorizontalAlignment.Center,

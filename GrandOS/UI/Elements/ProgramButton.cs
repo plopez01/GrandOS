@@ -1,4 +1,5 @@
-﻿using GrandOS.UI.Base;
+﻿using GrandOS.Programs;
+using GrandOS.UI.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,6 +22,7 @@ namespace GrandOS.UI.Elements
 
             content = new Label()
             {
+                IsHitTestVisible = false,
                 Foreground = Brushes.White,
                 Content = program.name,
                 FontFamily = (FontFamily)Application.Current.Resources["settingFontFamilyContent"],
@@ -28,6 +30,13 @@ namespace GrandOS.UI.Elements
                 FontWeight = FontWeights.Bold,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
+            };
+
+            SetHoverEvent();
+
+            background.MouseDown += delegate(object sender, System.Windows.Input.MouseButtonEventArgs e)
+            {
+                program.Execute();
             };
 
             AddToGrid(grid, x, y);
