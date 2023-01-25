@@ -8,15 +8,18 @@ using System.Windows.Media;
 
 namespace GrandOS.Programs
 {
-    internal class MailProgram : Program
+    internal class LinkerProgram : Program
     {
-        internal MailProgram() : base(Resources.MailProgram, Brushes.BlueViolet) { }
+        private string url;
+        internal LinkerProgram(string url) : base(Resources.MailProgram, Brushes.BlueViolet) {
+            this.url = url;
+        }
 
         internal override void Execute()
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "http://www.gmail.com",
+                FileName = url,
                 UseShellExecute = true
             });
         }

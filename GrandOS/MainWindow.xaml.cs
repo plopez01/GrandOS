@@ -34,7 +34,7 @@ namespace GrandOS
             _ = new Clock(clockLabel, "HH:mm", dateLabel, "D");
 
 
-            List<Program> programs = new List<Program>(){ new MailProgram(), new CalculatorProgram() };
+            List<Program> programs = new List<Program>(){ new LinkerProgram("https://mail.google.com/"), new ExecutableProgam("calc.exe") };
 
             _ = new ProgramGrid(appGird, 5, 2, 5, 5, programs);
         }

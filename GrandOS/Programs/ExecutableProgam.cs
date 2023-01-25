@@ -6,16 +6,19 @@ using System.Windows.Media;
 
 namespace GrandOS.Programs
 {
-    internal class CalculatorProgram : Program
+    internal class ExecutableProgam : Program
     {
-        internal CalculatorProgram() : base(Resources.CalculatorProgram, Brushes.Orange) { }
+        string executable;
+        internal ExecutableProgam(string executable) : base(Resources.CalculatorProgram, Brushes.Orange) {
+            this.executable = executable;
+        }
 
         internal override void Execute()
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "powershell.exe",
-                Arguments = "Start-Process calc -WindowStyle ([System.Diagnostics.ProcessWindowStyle]::Maximized)",
+                FileName = executable,
+                WindowStyle = ProcessWindowStyle.Maximized,
                 UseShellExecute = true
             });
         }
