@@ -16,6 +16,7 @@ using System.Windows.Threading;
 using GrandOS.UI.Elements;
 using GrandOS.UI;
 using GrandOS.Programs;
+using System.Globalization;
 
 namespace GrandOS
 {
