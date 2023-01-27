@@ -32,14 +32,33 @@ namespace GrandOS.UI.Elements
                 VerticalAlignment = VerticalAlignment.Center,
             };
 
-            SetHoverEvent();
-
             background.MouseDown += delegate(object sender, System.Windows.Input.MouseButtonEventArgs e)
             {
                 program.Execute();
             };
 
+            background.MouseEnter += MouseEnter;
+            background.MouseLeave += MouseLeave;
+
             AddToGrid(grid, x, y);
+        }
+
+        protected void MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Color backColor = ((SolidColorBrush)background.Fill).Color;
+            backColor.A -= 50;
+            background.Fill = new SolidColorBrush(backColor);
+
+            background.Stroke = Brushes.LightBlue;
+            background.StrokeThickness = 5;
+        }
+
+        protected void MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Color backColor = ((SolidColorBrush)background.Fill).Color;
+            backColor.A += 50;
+            background.Fill = new SolidColorBrush(backColor);
+            background.StrokeThickness = 0;
         }
     }
 }

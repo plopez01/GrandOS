@@ -1,4 +1,5 @@
-﻿using GrandOS.UI.Base;
+﻿using GrandOS.Programs;
+using GrandOS.UI.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,6 +32,11 @@ namespace GrandOS.UI.Elements
                 FontWeight = FontWeights.Bold,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
+            };
+
+            background.MouseDown += delegate (object sender, System.Windows.Input.MouseButtonEventArgs e)
+            {
+                
             };
 
             AddToGrid(grid, x, y);

@@ -15,7 +15,7 @@ namespace GrandOS.Programs
 
         internal override void Execute()
         {
-            Process.Start(new ProcessStartInfo
+            Process proc = Process.Start(new ProcessStartInfo
             {
                 FileName = executable,
                 WindowStyle = ProcessWindowStyle.Maximized,
