@@ -1,5 +1,6 @@
 ﻿using GrandOS.Programs;
 using GrandOS.UI.Base;
+using GrandOS.Windows;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +20,6 @@ namespace GrandOS.UI.Elements
             {
                 Margin = margin,
                 Fill = Brushes.DimGray,
-                IsHitTestVisible = false
             };
 
             content = new Label()
@@ -36,7 +36,8 @@ namespace GrandOS.UI.Elements
 
             background.MouseDown += delegate (object sender, System.Windows.Input.MouseButtonEventArgs e)
             {
-                
+                AddProgramPopup popup = new AddProgramPopup();
+                popup.Show();
             };
 
             AddToGrid(grid, x, y);

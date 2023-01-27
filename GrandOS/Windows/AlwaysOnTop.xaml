@@ -11,7 +11,7 @@
 		Deactivated="window_Deactivated"
 		ShowInTaskbar="False"
         Title="AlwaysOnTop" Height="100" Width="100" Background="Transparent">
-	<Border BorderBrush="#FF23366A" BorderThickness="4" CornerRadius="90" Name = "MainBorder" Background="#FF111A29" MouseDown="MainBorder_MouseDown" MouseEnter="MainBorder_MouseEnter">
+	<Border BorderBrush="{DynamicResource BackgroundLight}" BorderThickness="4" CornerRadius="90" Name = "MainBorder" Background="{DynamicResource BackgroundDark}" MouseDown="MainBorder_MouseDown" MouseEnter="MainBorder_MouseEnter">
 		
 	</Border>
 

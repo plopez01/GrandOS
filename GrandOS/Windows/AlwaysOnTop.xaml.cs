@@ -56,7 +56,7 @@ namespace GrandOS.Windows
 
         private void MainBorder_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
+            throw new NotImplementedException();
         }
 
         [DllImport("user32.dll")]

@@ -8,5 +8,11 @@
 
         <FontFamily x:Key="settingFontFamilyTitle">Segoe UI</FontFamily>
         <FontFamily x:Key="settingFontFamilyContent">Global Sans Serif</FontFamily>
+
+        <SolidColorBrush x:Key="BackgroundDark" Color="#FF111A29"/>
+        <SolidColorBrush x:Key="BackgroundLight" Color="#FF23366A"/>
+        
+        <SolidColorBrush x:Key="Title" Color="White"/>
+        <SolidColorBrush x:Key="Subtitle" Color="#99FFFFFF"/>
     </Application.Resources>
 </Application>
