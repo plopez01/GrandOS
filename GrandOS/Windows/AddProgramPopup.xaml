@@ -9,7 +9,7 @@
         Topmost="True"
         Deactivated="window_Deactivated"
         Title="AddProgramPopup" Height="1000" Width="600">
-    <Grid>
-        
+    <Grid Background="{DynamicResource BackgroundDark}">
+
     </Grid>
 </Window>
