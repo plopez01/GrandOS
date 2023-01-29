@@ -8,11 +8,8 @@ using System.Windows.Shapes;
 
 namespace GrandOS.UI.Base
 {
-    abstract class GirdButton
+    abstract class GridButton : ButtonBase
     {
-        protected Rectangle background;
-        protected Label content;
-
         protected void AddToGrid(Grid grid, int x, int y)
         {
             Grid.SetColumn(background, x);

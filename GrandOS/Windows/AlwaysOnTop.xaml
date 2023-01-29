@@ -11,8 +11,16 @@
 		Deactivated="window_Deactivated"
 		ShowInTaskbar="False"
         Title="AlwaysOnTop" Height="100" Width="100" Background="Transparent">
-	<Border BorderBrush="{DynamicResource BackgroundLight}" BorderThickness="4" CornerRadius="90" Name = "MainBorder" Background="{DynamicResource BackgroundDark}" MouseDown="MainBorder_MouseDown" MouseEnter="MainBorder_MouseEnter">
-		
-	</Border>
+    <Viewbox StretchDirection="UpOnly" Stretch="UniformToFill">
+        <Border BorderBrush="{DynamicResource BackgroundLight}"
+                Height="100" Width="100"
+                BorderThickness="4"
+                CornerRadius="90"
+                Name = "MainBorder"
+                Background="{DynamicResource BackgroundDark}"
+                MouseDown="MainBorder_MouseDown"
+                MouseEnter="MainBorder_MouseEnter">
+        </Border>
+    </Viewbox>
 
 </Window>

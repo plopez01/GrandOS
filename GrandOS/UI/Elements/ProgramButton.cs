@@ -10,7 +10,7 @@ using System.Windows.Shapes;
 
 namespace GrandOS.UI.Elements
 {
-    internal class ProgramButton : GirdButton
+    internal class ProgramButton : GridButton
     {
         internal ProgramButton(Program program, Grid grid, int x, int y, Thickness margin)
         {

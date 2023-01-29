@@ -8,8 +8,13 @@
         WindowStartupLocation="CenterScreen"
         Topmost="True"
         Deactivated="window_Deactivated"
+        ResizeMode="NoResize"
+        WindowStyle="None"
         Title="AddProgramPopup" Height="1000" Width="600">
-    <Grid Background="{DynamicResource BackgroundDark}">
+    <Viewbox StretchDirection="UpOnly" Stretch="UniformToFill">
+        <Grid x:Name="titleGrid" Background="{DynamicResource BackgroundDark}" Height="1000" Width="600">
+            
 
-    </Grid>
+        </Grid>
+    </Viewbox>
 </Window>

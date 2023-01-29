@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 namespace GrandOS.UI.Elements
 {
     // This could be a program instead of it's own separate class
-    internal class EmptyButton : GirdButton
+    internal class EmptyButton : GridButton
     {
         internal EmptyButton(Grid grid, int x, int y, Thickness margin)
         {
