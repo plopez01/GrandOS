@@ -8,7 +8,7 @@ using System.Windows.Shapes;
 
 namespace GrandOS.UI.Base
 {
-    abstract class GridButton : ButtonBase
+    abstract class GridButton : BaseButton
     {
         protected void AddToGrid(Grid grid, int x, int y)
         {

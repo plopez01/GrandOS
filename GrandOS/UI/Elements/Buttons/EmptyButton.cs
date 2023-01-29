@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace GrandOS.UI.Elements
+namespace GrandOS.UI.Elements.Buttons
 {
     // This could be a program instead of it's own separate class
     internal class EmptyButton : GridButton
@@ -27,7 +27,7 @@ namespace GrandOS.UI.Elements
                 IsHitTestVisible = false,
                 Foreground = Brushes.White,
                 Content = "+",
-                FontFamily = (FontFamily) Application.Current.Resources["settingFontFamilyContent"],
+                FontFamily = (FontFamily)Application.Current.Resources["settingFontFamilyContent"],
                 FontSize = 20,
                 FontWeight = FontWeights.Bold,
                 HorizontalAlignment = HorizontalAlignment.Center,

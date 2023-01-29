@@ -1,4 +1,5 @@
-﻿using Microsoft.WindowsAPICodePack.Shell;
+﻿using GrandOS.UI.Elements.Buttons;
+using Microsoft.WindowsAPICodePack.Shell;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -44,16 +45,7 @@ namespace GrandOS.Windows
                 //Trace.WriteLine(name);
             }*/
 
-            Rectangle rect = new Rectangle()
-            {
-                HorizontalAlignment = HorizontalAlignment.Right,
-                VerticalAlignment = VerticalAlignment.Top,
-                Width = 50,
-                Height = 50,
-                Fill = Brushes.Red,
-            };
-
-            titleGrid.Children.Add(rect);
+            _ = new CloseButton(titleGrid, this);
 
         }
 

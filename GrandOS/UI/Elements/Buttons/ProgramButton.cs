@@ -1,5 +1,6 @@
 ﻿using GrandOS.Programs;
 using GrandOS.UI.Base;
+using GrandOS.UI.Static;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace GrandOS.UI.Elements
+namespace GrandOS.UI.Elements.Buttons
 {
     internal class ProgramButton : GridButton
     {
@@ -32,33 +33,15 @@ namespace GrandOS.UI.Elements
                 VerticalAlignment = VerticalAlignment.Center,
             };
 
-            background.MouseDown += delegate(object sender, System.Windows.Input.MouseButtonEventArgs e)
+            background.MouseDown += delegate (object sender, System.Windows.Input.MouseButtonEventArgs e)
             {
                 program.Execute();
             };
 
-            background.MouseEnter += MouseEnter;
-            background.MouseLeave += MouseLeave;
+            ButtonEffects.Darken(background);
+            ButtonEffects.Stroke(background, Brushes.LightBlue);
 
             AddToGrid(grid, x, y);
-        }
-
-        protected void MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            Color backColor = ((SolidColorBrush)background.Fill).Color;
-            backColor.A -= 50;
-            background.Fill = new SolidColorBrush(backColor);
-
-            background.Stroke = Brushes.LightBlue;
-            background.StrokeThickness = 5;
-        }
-
-        protected void MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            Color backColor = ((SolidColorBrush)background.Fill).Color;
-            backColor.A += 50;
-            background.Fill = new SolidColorBrush(backColor);
-            background.StrokeThickness = 0;
         }
     }
 }
