@@ -13,8 +13,11 @@
         Title="AddProgramPopup" Height="1000" Width="600">
     <Viewbox StretchDirection="UpOnly" Stretch="UniformToFill">
         <Grid x:Name="titleGrid" Background="{DynamicResource BackgroundDark}" Height="1000" Width="600">
-            
-
+            <ScrollViewer Height="800" VerticalAlignment="Bottom">
+                <StackPanel x:Name="programStack">
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
+
     </Viewbox>
 </Window>

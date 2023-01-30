@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Windows.Media;
+using GrandOS.Programs.Base;
 
 namespace GrandOS.Programs
 {
     internal class ExecutableProgam : Program
     {
         string executable;
-        internal ExecutableProgam(string executable) : base(Resources.CalculatorProgram, Brushes.Orange) {
+        internal ExecutableProgam(string executable) : base(Resources.CalculatorProgram, Brushes.Orange, null) {
             this.executable = executable;
         }
 

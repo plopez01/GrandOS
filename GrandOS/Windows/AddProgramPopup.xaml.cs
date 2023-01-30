@@ -1,4 +1,6 @@
-﻿using GrandOS.UI.Elements.Buttons;
+﻿using GrandOS.Programs;
+using GrandOS.UI;
+using GrandOS.UI.Elements.Buttons;
 using Microsoft.WindowsAPICodePack.Shell;
 using System;
 using System.Collections.Generic;
@@ -22,7 +24,7 @@ namespace GrandOS.Windows
     /// </summary>
     public partial class AddProgramPopup : Window
     {
-        public AddProgramPopup()
+        public AddProgramPopup(ProgramGrid programGrid, int cellX, int cellY)
         {
             InitializeComponent();
 
@@ -31,22 +33,28 @@ namespace GrandOS.Windows
 
             // https://learn.microsoft.com/en-us/windows/win32/shell/knownfolderid
             // https://stackoverflow.com/questions/908850/get-installed-applications-in-a-system
-            /*ShellObject appsFolder = (ShellObject) KnownFolderHelper.FromKnownFolderId(new Guid("{1e87508d-89c2-42f0-8a7e-645a0f50ca58}"));
+            ShellObject appsFolder = (ShellObject) KnownFolderHelper.FromKnownFolderId(new Guid("{1e87508d-89c2-42f0-8a7e-645a0f50ca58}"));
 
-            // This is really slow and causes a big memory spike, caching this list may be a good idea
+            // TODO: This is really slow and causes a big memory spike, caching this list may be a good idea, or maybe loading dinamically
             foreach (var app in (IKnownFolder) appsFolder)
             {
-                // The friendly app name
-                string name = app.Name;
-                // The ParsingName property is the AppUserModelID
-                string appUserModelID = app.ParsingName; // or app.Properties.System.AppUserModel.ID
-                                                         // You can even get the Jumbo icon in one shot
-                ImageSource icon = app.Thumbnail.ExtraLargeBitmapSource;
-                //Trace.WriteLine(name);
-            }*/
+                // This call is computationally expensive, as we are loading lots of images into memory
+                ImageSource icon = app.Thumbnail.MediumBitmapSource;
 
-            _ = new CloseButton(titleGrid, this);
+                ExternalProgram extProgram = new ExternalProgram(app.Name, app.ParsingName, Brushes.DarkSalmon, icon);
 
+                AddProgramButton button = new AddProgramButton(programStack, extProgram, new Thickness(0));
+
+                button.AddToStackPanel(programStack);
+
+                button.ProgramSelected += delegate (object program)
+                {
+                    programGrid.AddProgam(extProgram, cellX, cellY);
+                    Close();
+                };
+            }
+
+            new CloseButton(titleGrid, this);
         }
 
         private void window_Deactivated(object sender, EventArgs e)

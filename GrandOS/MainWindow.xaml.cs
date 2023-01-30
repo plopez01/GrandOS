@@ -18,6 +18,7 @@ using GrandOS.UI;
 using GrandOS.Programs;
 using System.Globalization;
 using GrandOS.Windows;
+using GrandOS.Programs.Base;
 
 namespace GrandOS
 {
@@ -34,12 +35,12 @@ namespace GrandOS
             // new Program("Correu", Brushes.BlueViolet), new Program("Fotoeeds", Brushes.Orange)
             InitializeComponent();
 
-            _ = new Clock(clockLabel, "HH:mm", dateLabel, "D");
+            new Clock(clockLabel, "HH:mm", dateLabel, "D");
 
 
             List<Program> programs = new List<Program>(){ new LinkerProgram("https://mail.google.com/"), new ExecutableProgam("calc.exe") };
 
-            _ = new ProgramGrid(appGird, 5, 2, 5, 5, programs);
+            new ProgramGrid(appGird, 5, 2, 5, 5, programs);
 
             alwaysOnTop = new AlwaysOnTop();
             alwaysOnTop.SetUpPos();

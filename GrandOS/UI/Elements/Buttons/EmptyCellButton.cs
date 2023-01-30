@@ -1,5 +1,6 @@
 ﻿using GrandOS.Programs;
 using GrandOS.UI.Base;
+using GrandOS.UI.Static;
 using GrandOS.Windows;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,9 @@ using System.Windows.Shapes;
 namespace GrandOS.UI.Elements.Buttons
 {
     // This could be a program instead of it's own separate class
-    internal class EmptyButton : GridButton
+    internal class EmptyCellButton : GridButton
     {
-        internal EmptyButton(Grid grid, int x, int y, Thickness margin)
+        internal EmptyCellButton(ProgramGrid programGrid, int x, int y, Thickness margin)
         {
             background = new Rectangle()
             {
@@ -36,11 +37,11 @@ namespace GrandOS.UI.Elements.Buttons
 
             background.MouseDown += delegate (object sender, System.Windows.Input.MouseButtonEventArgs e)
             {
-                AddProgramPopup popup = new AddProgramPopup();
+                AddProgramPopup popup = new AddProgramPopup(programGrid, x, y);
                 popup.Show();
             };
 
-            AddToGrid(grid, x, y);
+            ButtonEffects.Darken(background);
         }
     }
 }

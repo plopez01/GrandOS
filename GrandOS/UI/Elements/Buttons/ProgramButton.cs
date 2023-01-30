@@ -1,4 +1,4 @@
-﻿using GrandOS.Programs;
+﻿using GrandOS.Programs.Base;
 using GrandOS.UI.Base;
 using GrandOS.UI.Static;
 using System;
@@ -13,7 +13,7 @@ namespace GrandOS.UI.Elements.Buttons
 {
     internal class ProgramButton : GridButton
     {
-        internal ProgramButton(Program program, Grid grid, int x, int y, Thickness margin)
+        internal ProgramButton(Program program, Thickness margin)
         {
             background = new Rectangle()
             {
@@ -40,8 +40,6 @@ namespace GrandOS.UI.Elements.Buttons
 
             ButtonEffects.Darken(background);
             ButtonEffects.Stroke(background, Brushes.LightBlue);
-
-            AddToGrid(grid, x, y);
         }
     }
 }
