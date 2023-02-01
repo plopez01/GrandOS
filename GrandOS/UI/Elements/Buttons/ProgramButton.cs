@@ -15,13 +15,13 @@ namespace GrandOS.UI.Elements.Buttons
     {
         internal ProgramButton(Program program, Thickness margin)
         {
-            background = new Rectangle()
+            Rectangle background = new Rectangle()
             {
                 Margin = margin,
                 Fill = program.color,
             };
 
-            content = new Label()
+            Label content = new Label()
             {
                 IsHitTestVisible = false,
                 Foreground = Brushes.White,
@@ -40,6 +40,9 @@ namespace GrandOS.UI.Elements.Buttons
 
             ButtonEffects.Darken(background);
             ButtonEffects.Stroke(background, Brushes.LightBlue);
+
+            localGrid.Children.Add(background);
+            localGrid.Children.Add(content);
         }
     }
 }
