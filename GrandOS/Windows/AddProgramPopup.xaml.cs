@@ -31,6 +31,9 @@ namespace GrandOS.Windows
             Height = SystemParameters.PrimaryScreenHeight * (1000.0 / 1080.0);
             Width = SystemParameters.PrimaryScreenWidth * (600.0 / 1920.0);
 
+            titleGrid.Width = Width;
+            titleGrid.Height = Height;
+
             // https://learn.microsoft.com/en-us/windows/win32/shell/knownfolderid
             // https://stackoverflow.com/questions/908850/get-installed-applications-in-a-system
             ShellObject appsFolder = (ShellObject) KnownFolderHelper.FromKnownFolderId(new Guid("{1e87508d-89c2-42f0-8a7e-645a0f50ca58}"));

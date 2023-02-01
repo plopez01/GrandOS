@@ -28,6 +28,9 @@ namespace GrandOS.Windows
             // Adjust for resolution changes
             Height = SystemParameters.PrimaryScreenHeight * 0.1;
             Width = Height;
+
+            MainBorder.Height = Height;
+            MainBorder.Width = Width;
         }
 
         public void SetUpPos()

@@ -12,12 +12,15 @@
         WindowStyle="None"
         Title="AddProgramPopup" Height="1000" Width="600">
     <Viewbox StretchDirection="UpOnly" Stretch="UniformToFill">
-        <Grid x:Name="titleGrid" Background="{DynamicResource BackgroundDark}" Height="1000" Width="600">
-            <ScrollViewer Height="800" VerticalAlignment="Bottom">
+        <StackPanel>
+            <Grid x:Name="titleGrid" Background="{DynamicResource BackgroundDark}" Height="1000" Width="600">
+                <Label FontSize="90" Foreground="White">Hola que tal</Label>
+                
+            </Grid>
+            <ScrollViewer VerticalAlignment="Bottom">
                 <StackPanel x:Name="programStack">
                 </StackPanel>
             </ScrollViewer>
-        </Grid>
-
+        </StackPanel>
     </Viewbox>
 </Window>
