@@ -41,8 +41,8 @@ namespace GrandOS.UI.Elements.Buttons
             ButtonEffects.Darken(background);
             ButtonEffects.Stroke(background, Brushes.LightBlue);
 
-            grid.Children.Add(background);
-            grid.Children.Add(content);
+            localGrid.Children.Add(background);
+            localGrid.Children.Add(content);
         }
     }
 }

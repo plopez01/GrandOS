@@ -10,25 +10,24 @@ namespace GrandOS.UI.Base
 {
     abstract class GridButton
     {
-        protected Grid grid = new Grid();
+        protected Grid localGrid = new Grid();
 
         internal void AddToGrid(Grid grid, int x, int y)
         {
-            Grid.SetColumn(grid, x);
-            Grid.SetRow(grid, y);
+            Grid.SetColumn(localGrid, x);
+            Grid.SetRow(localGrid, y);
 
-            grid.Children.Add(grid);
+            grid.Children.Add(localGrid);
         }
 
         internal void ReplaceInGird(Grid grid, int x, int y)
         {
             int index = y * 2 + x;
-            Grid.SetColumn(grid, x);
-            Grid.SetRow(grid, y);
+            Grid.SetColumn(localGrid, x);
+            Grid.SetRow(localGrid, y);
 
-
-            grid.Children.RemoveRange(index*2, 2);
-            grid.Children.Add(grid);
+            grid.Children.RemoveAt(index);
+            grid.Children.Add(localGrid);
         }
     }
 }

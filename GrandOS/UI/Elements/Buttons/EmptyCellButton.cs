@@ -43,8 +43,8 @@ namespace GrandOS.UI.Elements.Buttons
 
             ButtonEffects.Darken(background);
 
-            grid.Children.Add(background);
-            grid.Children.Add(content);
+            localGrid.Children.Add(background);
+            localGrid.Children.Add(content);
         }
     }
 }
