@@ -13,11 +13,11 @@ using System.Windows.Shapes;
 
 namespace GrandOS.UI.Elements.Buttons
 {
-    internal class CloseButton : BaseButton
+    internal class CloseButton
     {
         internal CloseButton(Grid grid, Window window) {
 
-            background = new Rectangle()
+            Rectangle background = new Rectangle()
             {
                 HorizontalAlignment = HorizontalAlignment.Right,
                 VerticalAlignment = VerticalAlignment.Top,
@@ -26,7 +26,7 @@ namespace GrandOS.UI.Elements.Buttons
                 Fill = Brushes.Red,
             };
 
-            content = new Label()
+            Label content = new Label()
             {
                 IsHitTestVisible = false,
                 Foreground = Brushes.White,

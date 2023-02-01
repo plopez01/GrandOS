@@ -8,32 +8,27 @@ using System.Windows.Shapes;
 
 namespace GrandOS.UI.Base
 {
-    abstract class GridButton : BaseButton
+    abstract class GridButton
     {
+        protected Grid grid = new Grid();
+
         internal void AddToGrid(Grid grid, int x, int y)
         {
-            Grid.SetColumn(background, x);
-            Grid.SetRow(background, y);
+            Grid.SetColumn(grid, x);
+            Grid.SetRow(grid, y);
 
-            Grid.SetColumn(content, x);
-            Grid.SetRow(content, y);
-
-            grid.Children.Add(background);
-            grid.Children.Add(content);
+            grid.Children.Add(grid);
         }
 
         internal void ReplaceInGird(Grid grid, int x, int y)
         {
             int index = y * 2 + x;
-            Grid.SetColumn(background, x);
-            Grid.SetRow(background, y);
+            Grid.SetColumn(grid, x);
+            Grid.SetRow(grid, y);
 
-            Grid.SetColumn(content, x);
-            Grid.SetRow(content, y);
 
             grid.Children.RemoveRange(index*2, 2);
-            grid.Children.Add(background);
-            grid.Children.Add(content);
+            grid.Children.Add(grid);
         }
     }
 }

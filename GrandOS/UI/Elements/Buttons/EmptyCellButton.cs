@@ -17,13 +17,13 @@ namespace GrandOS.UI.Elements.Buttons
     {
         internal EmptyCellButton(ProgramGrid programGrid, int x, int y, Thickness margin)
         {
-            background = new Rectangle()
+            Rectangle background = new Rectangle()
             {
                 Margin = margin,
                 Fill = Brushes.DimGray,
             };
 
-            content = new Label()
+            Label content = new Label()
             {
                 IsHitTestVisible = false,
                 Foreground = Brushes.White,
@@ -42,6 +42,9 @@ namespace GrandOS.UI.Elements.Buttons
             };
 
             ButtonEffects.Darken(background);
+
+            grid.Children.Add(background);
+            grid.Children.Add(content);
         }
     }
 }
